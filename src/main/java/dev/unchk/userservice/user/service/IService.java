@@ -8,13 +8,15 @@ import org.springframework.validation.BindingResult;
 import java.util.List;
 
 public interface IService {
-    String saveUser(UserRequest userRequest, BindingResult bindingResult);
+    String save(UserRequest userRequest, BindingResult bindingResult);
 
     List<UserResponse> findAllUser();
 
     User checkUser(String userId);
 
     UserResponse findUserById(String userId);
+
+    UserResponse findUserByEmail(String email);
 
     Boolean updateUser(UserRequest userRequest, BindingResult bindingResult);
 

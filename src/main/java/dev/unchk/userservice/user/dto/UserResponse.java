@@ -1,11 +1,8 @@
 package dev.unchk.userservice.user.dto;
 
 import dev.unchk.userservice.user.User.GenderEnum;
-import lombok.Builder;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import dev.unchk.userservice.user.User.RoleEnum;
+import lombok.*;
 
 @Builder
 @AllArgsConstructor
@@ -19,7 +16,7 @@ public class UserResponse {
     private Integer age;
     private String profileImage;
     private String mail;
-    private String password;
     private GenderEnum gender;
+    private RoleEnum Role;
     //Fields Relations
 }

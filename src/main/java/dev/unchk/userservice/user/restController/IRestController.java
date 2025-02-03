@@ -1,4 +1,4 @@
-package dev.unchk.userservice.user.resrController;
+package dev.unchk.userservice.user.restController;
 
 import dev.unchk.userservice.user.dto.UserRequest;
 import dev.unchk.userservice.user.dto.UserResponse;
@@ -8,13 +8,12 @@ import java.util.List;
 
 public interface IRestController {
 
-    public String saveUser(UserRequest user, BindingResult bindingResult);
 
     public List<UserResponse> findAllUser();
 
     public UserResponse findUserById(String userId);
 
-    public Boolean updateUser(UserRequest user, BindingResult bindingResult);
+    public Boolean update(UserRequest user, BindingResult bindingResult);
 
-    public Boolean deleteUser(String userId);
+    public Boolean delete(String userId);
 }

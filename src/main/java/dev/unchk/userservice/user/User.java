@@ -1,11 +1,7 @@
 package dev.unchk.userservice.user;
 
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -30,16 +26,14 @@ public class User {
     private String lastName;
 
     @Column(nullable = false)
+    private RoleEnum Role;
+
     private Integer age;
 
     private String profileImage;
     @Column(unique = true, nullable = false)
     private String mail;
-
-    @Column(nullable = false)
-
-    private String password;
- 
+    
     private String passwordCodeVerifier;
 
     private Boolean accountVerified;
@@ -58,7 +52,11 @@ public class User {
     @LastModifiedDate
     private Date updatedAt;
 
-    public enum GenderEnum{
-        MALE,FEMALE
+    public enum GenderEnum {
+        MALE, FEMALE
+    }
+
+    public enum RoleEnum {
+        ADMIN, CANDIDAT
     }
 }

@@ -1,6 +1,8 @@
 package dev.unchk.userservice.user.dto;
 
+import dev.unchk.userservice.user.User;
 import dev.unchk.userservice.user.User.GenderEnum;
+import dev.unchk.userservice.user.User.RoleEnum;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Max;
@@ -32,5 +34,8 @@ public class UserRequest {
     private String password;
     @NotNull
     private GenderEnum gender;
+    @NotNull
+    private RoleEnum Role;
+
     //Fields Relations
 }
